@@ -4,13 +4,13 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws ParametrosInvalidosExeption {
-        Scanner valor = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o primeiro valor: ");
-        int parametro1 = Integer.parseInt(valor.next());
+        int parametro1 = Integer.parseInt(scanner.next());
 
         System.out.print("Digite o segundo valor: ");
-        int parametro2 = Integer.parseInt(valor.next());
+        int parametro2 = Integer.parseInt(scanner.next());
 
         try {
             Contador contador = new Contador();
@@ -18,7 +18,7 @@ public class Main {
         }catch (ParametrosInvalidosExeption exception) {
             throw exception;
         } finally {
-            valor.close();
+            scanner.close();
             System.out.print("Fim do Contador!");
         }
     }
